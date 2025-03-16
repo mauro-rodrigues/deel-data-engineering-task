@@ -1,0 +1,8 @@
+kafka-python==2.0.6
+confluent-kafka==2.8.2
+psycopg2-binary==2.9.10
+SQLAlchemy==2.0.39
+click==8.1.8
+python-dotenv==1.0.1
+requests==2.32.3
+black==25.1.0
