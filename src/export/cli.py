@@ -17,7 +17,7 @@ from transformations.analytics_db import AnalyticsDB
 def export_to_csv(data: List[Dict[Any, Any]], filename: str) -> str:
     """Export data to CSV file with timestamp in filename."""
     if not data:
-        return "No data to export"
+        return "No data to export, please wait a bit before retrying."
     
     # create output directory if it doesn't exist
     # this ensures the export works even on first run
