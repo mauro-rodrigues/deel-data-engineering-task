@@ -36,8 +36,8 @@ def main():
             host=os.getenv('ANALYTICS_DB_HOST', 'localhost'),
             port=int(os.getenv('ANALYTICS_DB_PORT', 5433)),
             database=os.getenv('ANALYTICS_DB_NAME', 'analytics_db'),
-            user=os.getenv('ANALYTICS_DB_USER', 'analytics_user'),
-            password=os.getenv('ANALYTICS_DB_PASSWORD', 'analytics_pass')
+            user=os.getenv('ANALYTICS_DB_USER', 'postgres'),
+            password=os.getenv('ANALYTICS_DB_PASSWORD', 'postgres123')
         )
 
         # initialize schema
