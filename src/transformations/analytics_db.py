@@ -21,8 +21,8 @@ class AnalyticsDB:
         host: str = "localhost",
         port: int = 5433,
         database: str = "analytics_db",
-        user: str = "analytics_user",
-        password: str = "analytics_pass"
+        user: str = "postgres",
+        password: str = "postgres123"
     ):
         """Initialize the analytics database connection."""
         self.engine = create_engine(
@@ -507,7 +507,7 @@ class AnalyticsDB:
         try:
             conn.execute(text("REFRESH MATERIALIZED VIEW top_delivery_dates"))
             conn.execute(text("REFRESH MATERIALIZED VIEW top_customers_pending"))
-            logger.info("Refreshed materialized views")
+            logger.info("Refreshed materialized views top_delivery_dates and top_customers_pending successfully!")
         except Exception as e:
             logger.error(f"Error refreshing materialized views: {str(e)}")
 
