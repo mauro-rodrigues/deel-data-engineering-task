@@ -97,14 +97,14 @@ class DebeziumConnector:
                 "tasks.max": "1",
                 "database.hostname": "transactions-db",
                 "database.port": "5432",
-                "database.user": os.getenv("CDC_USER", "cdc_user"),
-                "database.password": os.getenv("CDC_PASSWORD", "cdc_1234"),
+                "database.user": os.getenv("CDC_USER", "finance_db_user"),
+                "database.password": os.getenv("CDC_PASSWORD", "1234"),
                 "database.dbname": "finance_db",
                 "database.server.name": "finance",
                 "topic.prefix": "finance",
                 "table.include.list": table_include,
                 "plugin.name": "pgoutput",
-                "slot.name": "cdc_pgoutput",
+                "slot.name": f"cdc_pgoutput_{table_name}",
                 "publication.name": "cdc_publication"
             }
         }
