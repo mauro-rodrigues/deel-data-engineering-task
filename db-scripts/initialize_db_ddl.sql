@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS operations.order_items(
     order_item_id    BIGSERIAL NOT NULL PRIMARY KEY,
     order_id         BIGINT,
     product_id       BIGINT,
-    quanity          INTEGER,
+    quantity          INTEGER,
     updated_at       TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP(3),
     updated_by       BIGINT,
     created_at       TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP(3),
@@ -256,7 +256,7 @@ BEGIN
                 SELECT FLOOR(RANDOM() * 1000)
                 INTO v_quantity;
 
-                INSERT INTO operations.order_items(order_id, product_id, quanity, updated_at, updated_by, created_at, created_by)
+                INSERT INTO operations.order_items(order_id, product_id, quantity, updated_at, updated_by, created_at, created_by)
                 VALUES (v_order_id, v_product_id, v_quantity, CURRENT_TIMESTAMP(3), -1, CURRENT_TIMESTAMP(3), -1);
 
 				v_current_value := v_current_value + 1;
